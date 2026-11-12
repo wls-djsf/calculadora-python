@@ -2377,3 +2377,41 @@ Este documento descreve os procedimentos de Garantia de Qualidade (QA) para vali
 | QM-08 | Clareza da mensagem de erro e recuperação | `[ ] Aprovado  [ ] Reprovado` | |
 
 `
+
+
+---
+
+## Parte 3 — Glossário e Arquitetura do Sistema de Educação, Proctoring Simulado, Certificação SHA-256 e Executáveis Windows
+
+### 3.1. Termos Técnicos de Proctoring, Criptografia e Empacotamento Windows
+
+| Termo Técnico | Significado e Função no Projeto |
+|---|---|
+| `Proctoring` | Sistema de supervisão e auditoria automatizada de integridade de exames (monitoramento de presença na webcam, ruído de voz no microfone e foco de janela do sistema operacional). |
+| `Hardware Mock` | Simulador determinístico de sensores físicos (`SensorWebcamMock`, `SensorAudioMock`, `SensorJanelaMock` em `src/proctoring.py`) que permite testar todas as regras de infração sem exigir câmera ou microfone reais conectados. |
+| `@dataclass(frozen=True)` | Decorador da biblioteca padrão `dataclasses` que cria classes de dados **imutáveis** (`frozen=True`): qualquer tentativa de alterar um atributo após a criação lança erro, garantindo integridade de logs de auditoria (`RegistroInfracao`). |
+| `SHA-256` (*Secure Hash Algorithm 256-bit*) | Função criptográfica unidirecional da família SHA-2 (NIST FIPS 180-4) que transforma qualquer volume de bytes em uma impressão digital única de 256 bits (64 caracteres hexadecimais). |
+| `Avalanche Effect` (Efeito Avalanche) | Propriedade matemática do `SHA-256` pela qual a alteração de 1 único bit ou caractere na entrada muda cerca de 50% de todos os bits do hash resultante, tornando qualquer adulteração imediatamente visível. |
+| `HMAC-SHA256` (*Hash-based Message Authentication Code*) | Código de autenticação de mensagem baseado em hash (`RFC 2104`) que combina o payload do certificado com uma chave secreta do emissor (`segredo_emissor`) para impedir que terceiros forjem certificados. |
+| `hmac.compare_digest(a, b)` | Função de comparação criptográfica em **tempo constante** (*Constant-Time Comparison*) que evita ataques de temporização (*Timing Attacks*). |
+| `Canonical JSON` (JSON Canônico) | Serialização determinística (`json.dumps(..., sort_keys=True, separators=(",", ":"))`) que garante que o mesmo dicionário gere exatamente a mesma sequência de bytes em qualquer computador. |
+| `ttk.Notebook` | Componente de abas (*Tabs*) do Tkinter usado em `app_educacao.py` para organizar a plataforma em 3 áreas: Curso Carrasco (`docs/`), Simulador de Proctoring + Exame SHA-256 e Laboratório da Calculadora. |
+| `ScrolledText` (`tkinter.scrolledtext`) | Caixa de texto multilinha com barra de rolagem vertical integrada usada para exibir os 6 módulos Markdown do curso e os relatórios de auditoria. |
+| `PyInstaller` | Ferramenta que empacota scripts Python, o interpretador Python 3.12, bibliotecas (`tkinter`, `decimal`, `hashlib`, `hmac`) e arquivos de dados (`docs/*.md`, `calculadora.ico`) em um único executável nativo do Windows (`.exe`). |
+| `--onefile` / `--windowed` | Flags do `PyInstaller`: `--onefile` gera um único arquivo `.exe` autossuficiente; `--windowed` (ou `--noconsole`) oculta a janela preta do terminal ao abrir a interface gráfica. |
+| `--add-data "docs;docs"` | Instrução do `PyInstaller` que embute toda a pasta `docs/` (com os 6 módulos do curso) dentro do executável `Sistema Educacao Calculadora.exe`. |
+| `sys._MEIPASS` | Atributo especial criado em tempo de execução pelo bootloader do `PyInstaller` contendo o caminho da pasta temporária onde os recursos embutidos (`docs/`) foram extraídos. |
+| `winreg` | Módulo nativo do Python para leitura e escrita no Registro do Windows (`HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall`), usado por `instalar_sistema_windows.py` para registrar os aplicativos em *Aplicativos Instalados*. |
+| `WScript.Shell` / `.lnk` | Componente COM nativo do Windows Script Host utilizado pelo instalador `instalar_sistema_windows.py` para criar atalhos oficiais `.lnk` no Menu Iniciar e na Área de Trabalho. |
+
+---
+
+### 3.2. Resumo dos Novos Módulos e Executáveis
+
+1. **`src/proctoring.py`**: Implementa `SensorWebcamMock`, `SensorAudioMock`, `SensorJanelaMock`, `RegistroInfracao` e `SessaoProctoring`.
+2. **`src/certificador_sha256.py`**: Implementa `CertificadorSHA256` e `ErroCertificacaoReprovada`.
+3. **`src/avaliador_carrasco.py`**: Implementa `AvaliadorCarrasco`, executando 5 baterias de verificação sobre `Calculadora` e integrando o resultado ao Proctoring e ao Certificador SHA-256.
+4. **`verify_certificate.py`**: Utilitário CLI de validação pública de certificados (`certificado_oficial_sha256.json`).
+5. **`app_educacao.py` e `Sistema Educacao Calculadora.exe`**: Interface gráfica completa do Sistema de Educação e Certificação empacotada para Windows.
+6. **`instalar_sistema_windows.py`**: Instalador automatizado dos dois executáveis (`Calculadora Python.exe` e `Sistema Educacao Calculadora.exe`) no computador Windows do usuário.
+7. **`docs/MODULO_01` a `docs/MODULO_06`**: Seis módulos didáticos aprofundados no estilo Carrasco cobrindo Clean Code, Tratamento de Exceções, TDD/Mutação, Proctoring, Criptografia SHA-256 e Build/Deploy de Executáveis Windows.

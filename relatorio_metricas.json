@@ -383,17 +383,17 @@
     {
       "arquivo": "src/proctoring.py",
       "funcao": "SessaoProctoring._atualizar_status",
-      "linhas": "79-89",
-      "complexidade": 4,
+      "linhas": "79-87",
+      "complexidade": 3,
       "rank_cc": "A",
-      "cobertura_pct": 83.33,
-      "crap": 4.07,
+      "cobertura_pct": 100.0,
+      "crap": 3.0,
       "aprovado_crap": true
     },
     {
       "arquivo": "src/proctoring.py",
       "funcao": "SessaoProctoring.inspecionar_ambiente",
-      "linhas": "91-157",
+      "linhas": "89-155",
       "complexidade": 4,
       "rank_cc": "A",
       "cobertura_pct": 100.0,
@@ -403,7 +403,7 @@
     {
       "arquivo": "src/proctoring.py",
       "funcao": "SessaoProctoring.esta_elegivel_para_certificacao",
-      "linhas": "159-161",
+      "linhas": "157-159",
       "complexidade": 1,
       "rank_cc": "A",
       "cobertura_pct": 100.0,
@@ -413,7 +413,7 @@
     {
       "arquivo": "src/proctoring.py",
       "funcao": "SessaoProctoring.gerar_relatorio_auditoria",
-      "linhas": "163-171",
+      "linhas": "161-169",
       "complexidade": 2,
       "rank_cc": "A",
       "cobertura_pct": 100.0,
@@ -503,7 +503,7 @@
     {
       "arquivo": "src/avaliador_carrasco.py",
       "funcao": "AvaliadorCarrasco.__init__",
-      "linhas": "17-18",
+      "linhas": "18-19",
       "complexidade": 2,
       "rank_cc": "A",
       "cobertura_pct": 100.0,
@@ -512,18 +512,68 @@
     },
     {
       "arquivo": "src/avaliador_carrasco.py",
-      "funcao": "AvaliadorCarrasco.avaliar_implementacao_calculadora",
-      "linhas": "20-75",
-      "complexidade": 19,
-      "rank_cc": "C",
+      "funcao": "AvaliadorCarrasco._verificar_precisao_decimal",
+      "linhas": "22-27",
+      "complexidade": 3,
+      "rank_cc": "A",
       "cobertura_pct": 100.0,
-      "crap": 19.0,
-      "aprovado_crap": false
+      "crap": 3.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "src/avaliador_carrasco.py",
+      "funcao": "AvaliadorCarrasco._verificar_blindagem_tipos",
+      "linhas": "31-40",
+      "complexidade": 3,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 3.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "src/avaliador_carrasco.py",
+      "funcao": "AvaliadorCarrasco._verificar_divisao_zero",
+      "linhas": "43-49",
+      "complexidade": 2,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 2.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "src/avaliador_carrasco.py",
+      "funcao": "AvaliadorCarrasco._verificar_porcentagem_contextual",
+      "linhas": "52-57",
+      "complexidade": 3,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 3.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "src/avaliador_carrasco.py",
+      "funcao": "AvaliadorCarrasco._verificar_encadeamento_e_sinal",
+      "linhas": "61-67",
+      "complexidade": 4,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 4.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "src/avaliador_carrasco.py",
+      "funcao": "AvaliadorCarrasco.avaliar_implementacao_calculadora",
+      "linhas": "70-92",
+      "complexidade": 5,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 5.0,
+      "aprovado_crap": true
     },
     {
       "arquivo": "src/avaliador_carrasco.py",
       "funcao": "AvaliadorCarrasco.executar_exame_completo",
-      "linhas": "78-105",
+      "linhas": "95-122",
       "complexidade": 1,
       "rank_cc": "A",
       "cobertura_pct": 100.0,
@@ -556,9 +606,169 @@
       "linhas": "59-83",
       "complexidade": 6,
       "rank_cc": "B",
-      "cobertura_pct": 33.33,
-      "crap": 16.67,
-      "aprovado_crap": false
+      "cobertura_pct": 100.0,
+      "crap": 6.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "app_educacao.py",
+      "funcao": "obter_caminho_recurso",
+      "linhas": "31-37",
+      "complexidade": 2,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 2.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "app_educacao.py",
+      "funcao": "iniciar_plataforma_educacao",
+      "linhas": "378-383",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "app_educacao.py",
+      "funcao": "InterfaceSistemaEducacao.__init__",
+      "linhas": "47-76",
+      "complexidade": 3,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 3.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "app_educacao.py",
+      "funcao": "InterfaceSistemaEducacao._carregar_mapa_modulos",
+      "linhas": "78-85",
+      "complexidade": 3,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 3.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "app_educacao.py",
+      "funcao": "InterfaceSistemaEducacao.selecionar_modulo",
+      "linhas": "87-99",
+      "complexidade": 5,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 5.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "app_educacao.py",
+      "funcao": "InterfaceSistemaEducacao.construir_sessao_proctoring",
+      "linhas": "101-122",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "app_educacao.py",
+      "funcao": "InterfaceSistemaEducacao.executar_inspecao_proctoring",
+      "linhas": "125-135",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "app_educacao.py",
+      "funcao": "InterfaceSistemaEducacao.executar_exame_e_emitir_certificado",
+      "linhas": "137-163",
+      "complexidade": 2,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 2.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "app_educacao.py",
+      "funcao": "InterfaceSistemaEducacao.verificar_certificado_salvo",
+      "linhas": "165-176",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "app_educacao.py",
+      "funcao": "InterfaceSistemaEducacao._configurar_janela",
+      "linhas": "178-190",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "app_educacao.py",
+      "funcao": "InterfaceSistemaEducacao._construir_interface",
+      "linhas": "192-229",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "app_educacao.py",
+      "funcao": "InterfaceSistemaEducacao._construir_aba_curso",
+      "linhas": "231-264",
+      "complexidade": 2,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 2.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "app_educacao.py",
+      "funcao": "InterfaceSistemaEducacao._construir_aba_exame_e_proctoring",
+      "linhas": "266-339",
+      "complexidade": 3,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 3.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "app_educacao.py",
+      "funcao": "InterfaceSistemaEducacao._construir_aba_calculadora",
+      "linhas": "341-356",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "app_educacao.py",
+      "funcao": "InterfaceSistemaEducacao._sincronizar_variaveis_tk",
+      "linhas": "358-365",
+      "complexidade": 3,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 3.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "app_educacao.py",
+      "funcao": "InterfaceSistemaEducacao._atualizar_painel_saida",
+      "linhas": "367-374",
+      "complexidade": 5,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 5.0,
+      "aprovado_crap": true
     }
   ],
   "mutacao": {

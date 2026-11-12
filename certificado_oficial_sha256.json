@@ -1,6 +1,6 @@
 {
   "payload": {
-    "id_certificado": "CERT-1CDB1DDB160E",
+    "id_certificado": "CERT-77EB879E7F66",
     "aluno": "Wanderson Lopes da Silva",
     "curso": "Engenharia de Software Sênior, TDD, Mutação e Clean Code com Python",
     "nota_final": 100.0,
@@ -9,11 +9,11 @@
     "crap_maximo": 5.0,
     "status_proctoring": "INTEGRO",
     "penalidade_proctoring": 0,
-    "emitido_em_utc": "2026-11-12T01:26:41.969417+00:00"
+    "emitido_em_utc": "2026-11-12T03:33:39.838350+00:00"
   },
-  "hash_payload_sha256": "5db7fbffb0cfdc1b5031c4fe44cd708491971a0933ca140dbf4f730d05e5fdc4",
-  "assinatura_sha256": "325f007d046bf5d113eeaac4ddb4f21d57a9ead3a2a01194f70b8867bce3afff",
-  "codigo_verificacao": "SHA256-325F007D-BCE3AFFF",
+  "hash_payload_sha256": "0e4e4043273c7db6786cef2a97f90be7f0451cee95ee2c8c17948434a8d181eb",
+  "assinatura_sha256": "6f23553df0367280431e9ccf6ebef741c94c0247ccdbeb450e8905848f4c08bd",
+  "codigo_verificacao": "SHA256-6F23553D-8F4C08BD",
   "algoritmo": "SHA-256 (FIPS 180-4)",
   "emissor": "Parceria de Engenharia Gemini & Antigravity"
 }

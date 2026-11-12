@@ -308,7 +308,7 @@ def main():
             "coverage",
             "run",
             "--branch",
-            "--source=calculadora,main,src,verify_certificate",
+            "--source=calculadora,main,src,verify_certificate,app_educacao",
             "-m",
             "pytest",
         ],
@@ -334,6 +334,7 @@ def main():
         "src/certificador_sha256.py",
         "src/avaliador_carrasco.py",
         "verify_certificate.py",
+        "app_educacao.py",
     ]
     # 5. Análise de Complexidade (Radon) e Métrica CRAP
     executar_comando(

@@ -235,3 +235,69 @@ def test_avaliador_carrasco_detecta_calculadora_defeituosa():
     resultado = avaliador.avaliar_implementacao_calculadora(CalculadoraIngênua())
     assert resultado["nota_final"] == 0.0
     assert resultado["aprovado_tecnico"] is False
+
+
+def test_interface_sistema_educacao_gui_e_fluxo_completo(tmp_path):
+    """Testa a aplicação gráfica InterfaceSistemaEducacao (app_educacao.py) com e sem janela Tk."""
+    import tkinter as tk
+    from unittest.mock import MagicMock, patch
+    from app_educacao import (
+        InterfaceSistemaEducacao,
+        obter_caminho_recurso,
+        iniciar_plataforma_educacao,
+    )
+
+    assert obter_caminho_recurso("docs").exists()
+    assert not obter_caminho_recurso("caminho_inexistente_xyz").exists()
+
+    caminho_cert = tmp_path / "cert_gui.json"
+    try:
+        janela = tk.Tk()
+        janela.withdraw()
+    except tk.TclError:
+        janela = None
+
+    try:
+        app = InterfaceSistemaEducacao(root=janela, caminho_certificado=caminho_cert)
+        assert len(app.modulos_disponiveis) >= 6
+        primeiro_mod = next(iter(app.modulos_disponiveis))
+        conteudo = app.selecionar_modulo(primeiro_mod)
+        assert "Módulo" in conteudo
+        assert app.selecionar_modulo("MODULO_INEXISTENTE") == "Módulo não encontrado."
+
+        # 1. Inspeção de Proctoring íntegra
+        rel_proc = app.executar_inspecao_proctoring()
+        assert rel_proc["status"] == "INTEGRO"
+
+        # 2. Exame completo aprovado + emissão de certificado SHA-256
+        res_exame = app.executar_exame_e_emitir_certificado()
+        assert res_exame["aprovado"] is True
+        assert caminho_cert.exists()
+
+        # 3. Verificação SHA-256 do certificado salvo
+        valido, msg = app.verificar_certificado_salvo()
+        assert valido is True
+        assert "AUTÊNTICO" in msg
+
+        # 4. Simular fraude (celular detectado) e confirmar bloqueio do certificado
+        if janela is not None:
+            app.var_celular.set(True)
+        else:
+            app.celular_detectado = True
+        res_fraude = app.executar_exame_e_emitir_certificado()
+        assert res_fraude["aprovado"] is False
+        assert "bloqueada pelo Proctoring" in res_fraude["motivo_reprovacao"]
+    finally:
+        if janela is not None:
+            janela.destroy()
+
+    # Testar iniciar_plataforma_educacao com Mock de Tk para não bloquear em mainloop
+    with patch("app_educacao.tk.Tk") as mock_tk:
+        instancia_tk = MagicMock()
+        instancia_tk.winfo_screenwidth.return_value = 1920
+        instancia_tk.winfo_screenheight.return_value = 1080
+        mock_tk.return_value = instancia_tk
+        with patch.object(InterfaceSistemaEducacao, "_construir_interface"):
+            app_iniciado = iniciar_plataforma_educacao()
+            instancia_tk.mainloop.assert_called_once()
+            assert isinstance(app_iniciado, InterfaceSistemaEducacao)

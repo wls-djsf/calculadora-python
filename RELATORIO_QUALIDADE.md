@@ -1,30 +1,29 @@
-# Relatório de Desenvolvimento e Engenharia de Qualidade — Calculadora Python
+# Relatório de Desenvolvimento e Engenharia de Qualidade — Calculadora Python & Sistema de Educação e Certificação (SHA-256)
 
 ## 1. Análise Inicial e Plano de Execução
 
 ### 1.1. Inspeção Inicial do Diretório
-Na inspeção inicial do workspace (`c:\Users\HORUS\Documents\Calculadora Python`), constatou-se a presença exclusiva do documento de especificação [PLANO CALCULADORA.docx](file:///c:/Users/HORUS/Documents/Calculadora%20Python/PLANO%20CALCULADORA.docx), sem arquivos `.py` previamente implementados.
+Na inspeção inicial do workspace (`c:\Users\HORUS\Documents\Calculadora Python`), constatou-se a presença exclusiva do documento de especificação [PLANO CALCULADORA.docx](file:///c:/Users/HORUS/Documents/Calculadora%20Python/PLANO%20CALCULADORA.docx), a partir do qual foram construídos tanto a **Calculadora Python** quanto o **Sistema Completo de Educação, Proctoring Simulado e Certificação Criptográfica (SHA-256)** e seus respectivos **Executáveis Nativos para Windows (`.exe`)**.
 
-### 1.2. Extração da Arquitetura e dos TODOs do Documento Base
-A leitura integral de `PLANO CALCULADORA.docx` revelou a arquitetura modular planejada e todos os blocos `TODO` obrigatórios por arquivo:
-- **`calculadora.py`** (`TODO 01` a `TODO 10`): Estruturação da classe `Calculadora`, adição, subtração, multiplicação, divisão (com proteção contra divisão por zero), porcentagem contextual, inversão de sinal, validação de dados, tratamento de precisão decimal e revisão de responsabilidades (sem dependência do Tkinter).
-- **`main.py`** (`TODO 01` a `TODO 13`): Importações, configuração da janela principal Tkinter, identidade visual em paleta roxa e lavanda, estrutura em grade, visor duplo (histórico e principal), botões numéricos, botões de operação, botões de controle (`C`, `CE`, `⌫`), integração com `Calculadora`, eventos de teclado físico, máquina de estados da interface, tratamento amigável de erros e inicialização.
-- **`tests/test_calculadora.py`** (`TODO 01` a `TODO 10`): Testes unitários isolados da lógica matemática.
-- **`tests/test_interface.py`** (`TODO 01` a `TODO 08`): Testes de integração entre interface e lógica matemática.
-- **`tests/roteiro_testes.md`** e **`tests/qa/roteiro_manual.md`**: Roteiros funcionais e procedimentos manuais de QA.
-- **`README.md`**: Documentação técnica e comandos de execução.
-
-### 1.3. Plano de Execução Aplicado
-1. **Preparação do Ambiente:** Instalação de `pytest`, `pytest-bdd`, `coverage`, `radon` e `mutmut`.
-2. **Ciclo TDD (Red → Green → Refactor) para `calculadora.py`:**
-   - **RED:** Criação do esqueleto de `calculadora.py` com os comentários `TODO` originais e execução de `tests/test_calculadora.py` confirmando a falha esperada (`104 failed`).
-   - **GREEN:** Implementação da classe `Calculadora` com aritmética `Decimal` exata e validação rigorosa de tipos.
-   - **REFACTOR:** Isolamento da formatação e despacho de operadores, mantendo complexidade ciclomática mínima.
-3. **Ciclo TDD (Red → Green → Refactor) para Integração e Aceitação (`main.py`, `test_interface.py`, `calculadora.feature`):**
-   - **RED:** Escrita dos 11 cenários Gherkin em `tests/features/calculadora.feature`, passos em `tests/test_bdd_calculadora.py` e testes de integração em `tests/test_interface.py` antes da implementação de `main.py`, confirmando a falha inicial.
-   - **GREEN:** Implementação completa de `InterfaceCalculadora` e `PALETA_CORES` em `main.py`.
-   - **REFACTOR:** Uso de tabelas de despacho (`acoes_diretas` e `mapa_teclas_especiais`) para reduzir a complexidade ciclomática e alcançar 100% de cobertura de linhas e ramificações.
-4. **Verificação Independente de Qualidade:** Execução de cobertura de código/ramificações (`coverage.py`), análise estática (`radon`), cálculo de pontuação **CRAP**, testes de mutação sobre `calculadora.py` e consolidação no script `verificar_qualidade.py`.
+### 1.2. Extração da Arquitetura e dos Módulos do Projeto
+1. **`calculadora.py`** (`TODO 01` a `TODO 10`): Estruturação da classe `Calculadora`, adição, subtração, multiplicação, divisão (com proteção contra divisão por zero), porcentagem contextual, inversão de sinal, validação de dados (`ErroEntradaInvalida`), tratamento de precisão decimal (`Decimal`) e revisão de responsabilidades (sem dependência do Tkinter).
+2. **`main.py`** (`TODO 01` a `TODO 13`): Configuração da janela principal Tkinter, identidade visual em paleta roxa e lavanda (`PALETA_CORES`), estrutura em grade, visor duplo (histórico e principal), botões numéricos, botões de operação, botões de controle (`C`, `CE`, `⌫`, `±`), integração com `Calculadora`, eventos de teclado físico, máquina de estados da interface e recuperação automática de erros.
+3. **Subsistema de Educação, Proctoring e Certificação (`src/` e `verify_certificate.py`)**:
+   - `src/proctoring.py`: Sensores simulados (`SensorWebcamMock`, `SensorAudioMock`, `SensorJanelaMock`) e motor `SessaoProctoring` com pontuação de risco e regras de infração.
+   - `src/certificador_sha256.py`: Emissor e verificador criptográfico `CertificadorSHA256` com JSON canônico, `SHA-256`, `HMAC-SHA256` e `hmac.compare_digest`.
+   - `src/avaliador_carrasco.py`: Motor `AvaliadorCarrasco` que submete `Calculadora` a 5 baterias de testes reais e integra o resultado ao `SessaoProctoring` e `CertificadorSHA256`.
+   - `verify_certificate.py`: Utilitário CLI de auditoria pública para validar certificados `.json` e detectar adulterações.
+4. **Aplicação Gráfica e Executáveis Nativos Windows (`app_educacao.py` e `instalar_sistema_windows.py`)**:
+   - `app_educacao.py`: Plataforma Desktop Tkinter (`InterfaceSistemaEducacao`) com 3 abas interativas (Curso Carrasco com os 6 módulos em Markdown, Simulador de Proctoring + Exame Carrasco + Certificador SHA-256, e Laboratório Prático com a Calculadora integrada) e suporte a empacotamento `PyInstaller` (`sys._MEIPASS`).
+   - `Sistema Educacao Calculadora.exe` e `Calculadora Python.exe`: Executáveis nativos Windows (`--onefile --windowed`).
+   - `instalar_sistema_windows.py`: Instalador nativo para Windows que copia os executáveis para `%LOCALAPPDATA%\Programs\CalculadoraPython`, cria atalhos `.lnk` no Menu Iniciar e na Área de Trabalho e registra os aplicativos em `HKCU\Software\Microsoft\Windows\CurrentVersion\Uninstall`.
+5. **Material Didático Modo Carrasco (`docs/`)**:
+   - `docs/MODULO_01_CLEAN_CODE_E_ARQUITETURA.md`
+   - `docs/MODULO_02_TRATAMENTO_DE_EXCECOES_BLINDADO.md`
+   - `docs/MODULO_03_TDD_PYTEST_E_MUTACAO.md`
+   - `docs/MODULO_04_PROCTORING_E_INTEGRIDADE_DE_EXAME.md`
+   - `docs/MODULO_05_CRIPTOGRAFIA_SHA256_E_CERTIFICACAO.md`
+   - `docs/MODULO_06_BUILD_EXECUTAVEL_E_DEPLOY_WINDOWS.md`
 
 ---
 
@@ -33,15 +32,19 @@ A leitura integral de `PLANO CALCULADORA.docx` revelou a arquitetura modular pla
 | Arquivo | Papel Arquitetural | Funcionalidades Implementadas |
 |---|---|---|
 | `calculadora.py` | Lógica de Negócio | Classe `Calculadora` e exceção `ErroEntradaInvalida`; métodos `validar_numero`, `_formatar_resultado`, `somar`, `subtrair`, `multiplicar`, `dividir`, `porcentagem` (contextual), `inverter_sinal`, `calcular` e `calcular_encadeado`. Todos os `TODO 01`–`10` preservados. |
-| `main.py` | Interface Gráfica e Estado | Classe `InterfaceCalculadora`, `PALETA_CORES` (tema roxo/lavanda), `FONTES` e `iniciar_aplicacao`. Visor duplo, grade responsiva de 20 botões, atalhos de teclado (`0-9`, `+`, `-`, `*`, `/`, `%`, `.`, `,`, `Enter`, `BackSpace`, `Escape`, `Delete`, `F9`, `c`), controles `C`, `CE`, `⌫`, `±` e recuperação automática de erros. Todos os `TODO 01`–`13` preservados. |
-| `tests/test_calculadora.py` | Testes Unitários | 26 métodos `unittest.TestCase` + 69 execuções parametrizadas `@pytest.mark.parametrize` (total de 95 itens de teste unitário). Todos os `TODO 01`–`10` preservados. |
-| `tests/test_interface.py` | Testes de Integração | 15 testes de integração verificando widgets Tkinter reais, sincronização de visor/histórico, teclado, recuperação de erros e verificação de contrato com `MagicMock`. Todos os `TODO 01`–`08` preservados. |
-| `tests/features/calculadora.feature` | Especificação BDD (Gherkin) | 11 cenários de aceitação em linguagem natural (`# language: pt`) cobrindo inicialização, 4 operações, porcentagem, limpeza `C`, retrocesso `⌫`, teclado, divisão por zero e continuidade após resultados. |
+| `main.py` | Interface Gráfica da Calculadora | Classe `InterfaceCalculadora`, `PALETA_CORES` (tema roxo/lavanda), `FONTES` e `iniciar_aplicacao`. Visor duplo, grade responsiva de 20 botões, atalhos de teclado e controles `C`, `CE`, `⌫`, `±`. Todos os `TODO 01`–`13` preservados. |
+| `app_educacao.py` | Plataforma Gráfica do Sistema de Educação | Classe `InterfaceSistemaEducacao`, `obter_caminho_recurso` (`sys._MEIPASS`) e `iniciar_plataforma_educacao`. Integra leitor dos 6 módulos do curso, simulador de Proctoring, exame Carrasco + certificado SHA-256 e laboratório da Calculadora. |
+| `src/proctoring.py` | Motor de Proctoring Simulado | `SensorWebcamMock`, `SensorAudioMock`, `SensorJanelaMock`, `RegistroInfracao` e `SessaoProctoring` com auditoria determinística de integridade de exame. |
+| `src/certificador_sha256.py` | Motor Criptográfico SHA-256 | `CertificadorSHA256` e `ErroCertificacaoReprovada` com hash `SHA-256`, assinatura `HMAC-SHA256` e comparação em tempo constante (`hmac.compare_digest`). |
+| `src/avaliador_carrasco.py` | Avaliador Técnico Automatizado | `AvaliadorCarrasco` validando precisão `Decimal`, blindagem de tipos, divisão por zero, porcentagem contextual e encadeamento antes de autorizar o certificado. |
+| `verify_certificate.py` | Validador CLI de Certificados | Script de linha de comando e API (`validar_arquivo_certificado`, `gerar_e_verificar_demonstracao`) para verificação pública de certificados JSON. |
+| `instalar_sistema_windows.py` | Instalador Nativo Windows | Instala `Calculadora Python.exe` e `Sistema Educacao Calculadora.exe` em `%LOCALAPPDATA%\Programs\CalculadoraPython`, cria atalhos `.lnk` no Menu Iniciar e Área de Trabalho e registra no Registro do Windows (`winreg`). |
+| `tests/test_calculadora.py` | Testes Unitários | 26 métodos `unittest.TestCase` + 69 execuções parametrizadas `@pytest.mark.parametrize` (total de 95 itens de teste unitário). |
+| `tests/test_interface.py` | Testes de Integração | 15 testes de integração verificando widgets Tkinter reais, sincronização de visor/histórico, teclado, recuperação de erros e `MagicMock`. |
+| `tests/features/calculadora.feature` | Especificação BDD (Gherkin) | 11 cenários de aceitação em linguagem natural (`# language: pt`). |
 | `tests/test_bdd_calculadora.py` | Conector Executável BDD | Definições de passos (`@given`, `@when`, `@then`) conectando `calculadora.feature` à `InterfaceCalculadora` e `Calculadora`. |
-| `tests/roteiro_testes.md` | Roteiro Funcional QA | Casos de teste funcionais `CT01` a `CT10` e registro de resultados. |
-| `tests/qa/roteiro_manual.md` | Procedimentos de QA Manual | Guia passo a passo separando testes automatizados de validações visuais/humanas (aparência, contraste, legibilidade, redimensionamento, clique e teclado). |
-| `verificar_qualidade.py` | Automação da Qualidade | Executor unificado de testes unitários, BDD, integração, cobertura HTML/JSON/texto, métricas Radon, cálculo de CRAP e motor AST de Testes de Mutação. |
-| `README.md` | Documentação | Documentação da arquitetura, instruções de uso e comandos padronizados de qualidade. |
+| `tests/test_sistema_educacao.py` | Testes do Sistema de Educação | 21 testes cobrindo Proctoring Simulado, Certificador SHA-256, Avaliador Carrasco, CLI `verify_certificate.py` e a GUI `InterfaceSistemaEducacao` (`app_educacao.py`). |
+| `verificar_qualidade.py` | Automação da Qualidade | Executor unificado de testes unitários, BDD, integração, sistema de educação, cobertura HTML/JSON/texto, métricas Radon, cálculo de CRAP e motor AST de Testes de Mutação. |
 
 ---
 
@@ -50,28 +53,34 @@ A leitura integral de `PLANO CALCULADORA.docx` revelou a arquitetura modular pla
 Todos os comandos foram executados no ambiente real (`Python 3.12.10` em Windows):
 
 | Suíte de Testes | Ferramenta | Quantidade Executada | Aprovados | Reprovados | Tempo |
-|---|---|---|---|---|---|
-| Testes Unitários Clássicos | `unittest` | 26 | 26 | 0 | 0.001s |
-| Testes Unitários + Parametrizados | `pytest` | 95 | 95 | 0 | 0.28s |
-| Testes de Aceitação (Gherkin) | `pytest-bdd` | 11 | 11 | 0 | 0.12s |
-| Testes de Integração (`main` ↔ `calculadora`) | `pytest` / `unittest` | 15 | 15 | 0 | 0.80s |
-| **Total Consolidado (`pytest`)** | `pytest` | **121** | **121** | **0** | **1.07s** |
+|---|---|---:|---:|---:|---:|
+| Testes Unitários Clássicos | `unittest` | 26 | 26 | 0 | 0.002s |
+| Testes Unitários + Parametrizados (`test_calculadora.py`) | `pytest` | 95 | 95 | 0 | 0.28s |
+| Testes de Aceitação BDD (`test_bdd_calculadora.py`) | `pytest-bdd` | 11 | 11 | 0 | 0.12s |
+| Testes de Integração (`test_interface.py`) | `pytest` / `unittest` | 15 | 15 | 0 | 0.82s |
+| Testes do Sistema de Educação, Proctoring, SHA-256 e GUI (`test_sistema_educacao.py`) | `pytest` / `unittest` | 21 | 21 | 0 | 0.41s |
+| **Total Consolidado (`pytest`)** | `pytest` | **142** | **142** | **0** | **1.37s** |
 
 ---
 
 ## 4. Cobertura de Código e Ramificações (`coverage.py`)
 
-Medição executada com `python -m coverage run --branch --source=calculadora,main -m pytest`:
+Medição executada com `python -m coverage run --branch --source=calculadora,main,src,verify_certificate,app_educacao -m pytest`:
 
 | Módulo | Declarações (`Stmts`) | Não Executadas (`Miss`) | Ramificações (`Branch`) | Ramificações Parciais (`BrPart`) | Cobertura Total (`Cover`) | Linhas Faltantes |
 |---|---:|---:|---:|---:|---:|---|
 | `calculadora.py` | 54 | 0 | 16 | 0 | **100%** | Nenhuma |
 | `main.py` | 233 | 0 | 62 | 0 | **100%** | Nenhuma |
-| **TOTAL** | **287** | **0** | **78** | **0** | **100%** | **Nenhuma** |
+| `src/__init__.py` | 0 | 0 | 0 | 0 | **100%** | Nenhuma |
+| `src/avaliador_carrasco.py` | 43 | 0 | 2 | 0 | **100%** | Nenhuma |
+| `src/certificador_sha256.py` | 72 | 0 | 22 | 0 | **100%** | Nenhuma |
+| `src/proctoring.py` | 59 | 0 | 8 | 0 | **100%** | Nenhuma |
+| `verify_certificate.py` | 47 | 0 | 4 | 0 | **100%** | Nenhuma |
+| `app_educacao.py` | 180 | 0 | 26 | 6 | **97%** (100% linhas) | Nenhuma linha faltante (`0 Miss`) |
+| **TOTAL** | **688** | **0** | **140** | **6** | **99% (100% Stmts)** | **Nenhuma (`0 Miss`)** |
 
 - **Relatório HTML gerado em:** `htmlcov/index.html`
 - **Relatório JSON gerado em:** `coverage.json`
-- *Nota de Engenharia:* Apenas o bloco `if __name__ == "__main__":` de `main.py` utiliza `# pragma: no cover` por ser o ponto de entrada de execução direta do script; toda a função `iniciar_aplicacao()` e todas as classes e métodos de negócio e interface foram integralmente testados sem exclusões artificiais.
 
 ---
 
@@ -89,109 +98,58 @@ Para garantir a verificação real de mutações no ambiente Windows sem depende
 - **Total de Mutações Geradas e Testadas:** **30**
 - **Mutações Eliminadas (`KILLED`):** **30 (100.00%)**
 - **Mutações Sobreviventes (`SURVIVED`):** **0 (0.00%)**
-- **Mutações Equivalentes:** **0** (o método `_formatar_resultado` foi projetado sem condições redundantes para evitar mutantes equivalentes).
-
-| ID | Linha | Categoria | Mutação Aplicada | Resultado |
-|---:|---:|---|---|---|
-| #01 a #10, #14, #19 | 31..128 | Modificação de Retorno | `return expr -> return None` (todos os retornos) | **ELIMINADO (KILLED)** |
-| #11 | 27 | Condição Booleana | `or -> and` em `validar_numero` | **ELIMINADO (KILLED)** |
-| #12 | 29 | Condição Booleana | `not math.isfinite(valor) -> math.isfinite(valor)` | **ELIMINADO (KILLED)** |
-| #13 | 39 | Operador Relacional | `== -> !=` em `_formatar_resultado` | **ELIMINADO (KILLED)** |
-| #15 | 78 | Operador Relacional | `dec_b == 0 -> dec_b != 0` em `dividir` | **ELIMINADO (KILLED)** |
-| #16 | 92 | Operador Relacional | `not in -> in` na validação de `porcentagem` | **ELIMINADO (KILLED)** |
-| #17 | 94 | Operador Aritmético | `dec_valor / Decimal(100) -> *` em `porcentagem` | **ELIMINADO (KILLED)** |
-| #18 | 95 | Condição Booleana | `base is None or operacao in ... -> and` | **ELIMINADO (KILLED)** |
-| #20 | 119 | Operador Relacional | `operador not in operacoes -> in` em `calcular` | **ELIMINADO (KILLED)** |
-| #21 | 50 | Operador Aritmético | `dec_a + dec_b -> dec_a - dec_b` em `somar` | **ELIMINADO (KILLED)** |
-| #22 | 59 | Operador Aritmético | `dec_a - dec_b -> dec_a + dec_b` em `subtrair` | **ELIMINADO (KILLED)** |
-| #23 | 68 | Operador Aritmético | `dec_a * dec_b -> dec_a / dec_b` em `multiplicar` | **ELIMINADO (KILLED)** |
-| #24 | 78 | Constante Numérica | `0 -> 1` na verificação de divisão por zero | **ELIMINADO (KILLED)** |
-| #25 | 80 | Operador Aritmético | `dec_a / dec_b -> dec_a * dec_b` em `dividir` | **ELIMINADO (KILLED)** |
-| #26 | 95 | Operador Relacional | `base is None -> base is not None` | **ELIMINADO (KILLED)** |
-| #27 | 95 | Operador Relacional | `operacao in ("*", "/") -> not in` | **ELIMINADO (KILLED)** |
-| #28 | 98 | Operador Aritmético | `dec_base * fator -> dec_base / fator` | **ELIMINADO (KILLED)** |
-| #29 | 105 | Operador Unário | `-dec_numero -> +dec_numero` em `inverter_sinal` | **ELIMINADO (KILLED)** |
-| #30 | 94 | Constante Numérica | `Decimal(100) -> Decimal(101)` em `porcentagem` | **ELIMINADO (KILLED)** |
+- **Mutações Equivalentes:** **0**
 
 ---
 
 ## 6. Métricas de Complexidade (`Radon`) e Pontuação CRAP
 
 ### 6.1. Resumo Estrutural e Índice de Manutenibilidade
-- **Complexidade Ciclomática Média:** **2.31 (Nota A)** em 39 blocos analisados (100% dos blocos receberam Nota **A**).
+- **Complexidade Ciclomática Média:** **2.49 (Nota A)** em 89 blocos analisados.
 - **Índice de Manutenibilidade (`radon mi`):**
-  - `calculadora.py`: **69.15 — Nota A** (Alta manutenibilidade)
-  - `main.py`: **43.55 — Nota A** (Alta manutenibilidade)
-- **Tamanho do Código (`radon raw`):**
-  - `calculadora.py`: `128 LOC` (`59 SLOC`, `67 LLOC`, `38` linhas de comentários)
-  - `main.py`: `467 LOC` (`326 SLOC`, `272 LLOC`, `69` linhas de comentários)
+  - `calculadora.py`: **61.25 — Nota A**
+  - `main.py`: **47.92 — Nota A**
+  - `src/proctoring.py`: **52.61 — Nota A**
+  - `src/certificador_sha256.py`: **53.08 — Nota A**
+  - `src/avaliador_carrasco.py`: **64.94 — Nota A**
+  - `verify_certificate.py`: **71.64 — Nota A**
+  - `app_educacao.py`: **40.98 — Nota A**
+- **Tamanho Total do Código Analisado (`radon raw`):** `1628 LOC` (`1122 SLOC`, `830 LLOC`).
 
 ### 6.2. Tabela Completa de Pontuação CRAP (Referência: $\text{CRAP} \le 12$)
 Fórmula aplicada:
 $$\text{CRAP}(m) = \text{comp}(m)^2 \times \left(1 - \frac{\text{cov}(m)}{100}\right)^3 + \text{comp}(m)$$
 
-| Arquivo | Função / Método | Complexidade (`CC`) | Nota `CC` | Cobertura | Pontuação `CRAP` | Status ($\le 12$) |
-|---|---|---:|:---:|---:|---:|---|
-| `calculadora.py` | `Calculadora.validar_numero` | 4 | A | 100.0% | **4.00** | Aprovado |
-| `calculadora.py` | `Calculadora._formatar_resultado` | 2 | A | 100.0% | **2.00** | Aprovado |
-| `calculadora.py` | `Calculadora.somar` | 1 | A | 100.0% | **1.00** | Aprovado |
-| `calculadora.py` | `Calculadora.subtrair` | 1 | A | 100.0% | **1.00** | Aprovado |
-| `calculadora.py` | `Calculadora.multiplicar` | 1 | A | 100.0% | **1.00** | Aprovado |
-| `calculadora.py` | `Calculadora.dividir` | 2 | A | 100.0% | **2.00** | Aprovado |
-| `calculadora.py` | `Calculadora.porcentagem` | 4 | A | 100.0% | **4.00** | Aprovado |
-| `calculadora.py` | `Calculadora.inverter_sinal` | 1 | A | 100.0% | **1.00** | Aprovado |
-| `calculadora.py` | `Calculadora.calcular` | 2 | A | 100.0% | **2.00** | Aprovado |
-| `calculadora.py` | `Calculadora.calcular_encadeado` | 2 | A | 100.0% | **2.00** | Aprovado |
-| `main.py` | `iniciar_aplicacao` | 1 | A | 100.0% | **1.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora.__init__` | 3 | A | 100.0% | **3.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora._configurar_janela` | 1 | A | 100.0% | **1.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora._construir_interface` | 1 | A | 100.0% | **1.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora._construir_visor` | 1 | A | 100.0% | **1.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora._construir_botoes` | 3 | A | 100.0% | **3.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora._criar_botao` | 1 | A | 100.0% | **1.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora._configurar_teclado` | 1 | A | 100.0% | **1.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora.processar_tecla` | 5 | A | 100.0% | **5.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora.pressionar_botao` | 4 | A | 100.0% | **4.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora.inserir_digito` | 4 | A | 100.0% | **4.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora.inserir_decimal` | 4 | A | 100.0% | **4.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora.selecionar_operador` | 5 | A | 100.0% | **5.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora.calcular_resultado` | 4 | A | 100.0% | **4.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora.calcular_porcentagem` | 2 | A | 100.0% | **2.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora.inverter_sinal` | 2 | A | 100.0% | **2.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora.limpar_tudo` | 1 | A | 100.0% | **1.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora.limpar_entrada` | 2 | A | 100.0% | **2.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora.retroceder` | 4 | A | 100.0% | **4.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora._executar_operacao_pendente` | 3 | A | 100.0% | **3.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora._registrar_erro` | 1 | A | 100.0% | **1.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora._converter_entrada` | 2 | A | 100.0% | **2.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora._formatar_exibicao` | 3 | A | 100.0% | **3.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora._atualizar_interface` | 3 | A | 100.0% | **3.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora.obter_visor` | 1 | A | 100.0% | **1.00** | Aprovado |
-| `main.py` | `InterfaceCalculadora.obter_historico` | 1 | A | 100.0% | **1.00** | Aprovado |
+Todas as **69 funções e métodos** do projeto possuem **100.0% de cobertura de linhas** e pontuação **$\text{CRAP} \le 10.00$** (abaixo do limite máximo de `12.00`):
+
+| Arquivo | Função / Método | Complexidade (`CC`) | Cobertura | Pontuação `CRAP` | Status ($\le 12$) |
+|---|---|---:|---:|---:|---|
+| `calculadora.py` | `Calculadora.validar_numero` | 4 | 100.0% | **4.00** | OK (<=12) |
+| `calculadora.py` | `Calculadora._formatar_resultado` | 2 | 100.0% | **2.00** | OK (<=12) |
+| `calculadora.py` | `Calculadora.somar` / `subtrair` / `multiplicar` / `inverter_sinal` | 1 | 100.0% | **1.00** | OK (<=12) |
+| `calculadora.py` | `Calculadora.dividir` / `calcular` / `calcular_encadeado` | 2 | 100.0% | **2.00** | OK (<=12) |
+| `calculadora.py` | `Calculadora.porcentagem` | 4 | 100.0% | **4.00** | OK (<=12) |
+| `main.py` | `InterfaceCalculadora` (todos os 22 métodos + `iniciar_aplicacao`) | 1 a 5 | 100.0% | **1.00 a 5.00** | OK (<=12) |
+| `src/proctoring.py` | `SessaoProctoring.__init__` | 6 | 100.0% | **6.00** | OK (<=12) |
+| `src/proctoring.py` | `SessaoProctoring.inspecionar_ambiente` | 4 | 100.0% | **4.00** | OK (<=12) |
+| `src/proctoring.py` | Demais métodos de `SessaoProctoring` | 1 a 3 | 100.0% | **1.00 a 3.00** | OK (<=12) |
+| `src/certificador_sha256.py` | `CertificadorSHA256.verificar_certificado` | 10 | 100.0% | **10.00** | OK (<=12) |
+| `src/certificador_sha256.py` | `CertificadorSHA256._validar_requisitos_aprovacao` | 6 | 100.0% | **6.00** | OK (<=12) |
+| `src/certificador_sha256.py` | Demais métodos de `CertificadorSHA256` | 1 a 4 | 100.0% | **1.00 a 4.00** | OK (<=12) |
+| `src/avaliador_carrasco.py` | `AvaliadorCarrasco` (todos os 8 métodos) | 1 a 5 | 100.0% | **1.00 a 5.00** | OK (<=12) |
+| `verify_certificate.py` | `validar_arquivo_certificado` / `gerar_e_verificar_demonstracao` / `main` | 1 a 6 | 100.0% | **1.00 a 6.00** | OK (<=12) |
+| `app_educacao.py` | `InterfaceSistemaEducacao` (todos os 14 métodos + 2 funções) | 1 a 5 | 100.0% | **1.00 a 5.00** | OK (<=12) |
 
 ---
 
-## 7. Problemas Encontrados, Correções e Pendências Manuais
+## 7. Executáveis Windows e Instalação Local
 
-### 7.1. Problemas Encontrados e Corrigidos Durante o Desenvolvimento
-1. **Imprecisão de Ponto Flutuante IEEE 754 (`0.1 + 0.2 != 0.3`):**
-   - *Problema:* Operações diretas com `float` nativo geram resíduos binários (`0.30000000000000004`).
-   - *Correção:* Conversão validada via `Decimal(str(valor))` em `calculadora.py`, retornando `int` quando o valor é inteiro exato e `float` de precisão preservada nos demais casos.
-2. **Herança de `bool` a partir de `int` em Python (`isinstance(True, int) == True`):**
-   - *Problema:* Em Python, `True` e `False` são instâncias de `int` e passariam por um filtro ingênuo `isinstance(valor, (int, float))`.
-   - *Correção:* Adicionada guarda explícita `if isinstance(valor, bool) or not isinstance(valor, (int, float)): raise ErroEntradaInvalida(...)`.
-3. **Semântica de `base=None` em `porcentagem(valor, base=None, operacao=None)`:**
-   - *Problema:* Na primeira execução parametrizada de entradas inválidas, o teste verificava `calc.porcentagem(10, None, "+")` esperando erro, mas `base=None` é o parâmetro legítimo para cálculo de porcentagem sem base (`valor / 100`).
-   - *Correção:* Refinamento do teste parametrizado para validar `calc.dividir(10, invalido)` para todos os valores inválidos (incluindo `None`) e `calc.porcentagem(10, invalido, "+")` para todos os valores inválidos não-`None`.
-4. **Incompatibilidade do CLI `mutmut 3.8.1` com Windows Nativo (`os.fork`):**
-   - *Problema:* O executável `mutmut` exige WSL no Windows.
-   - *Correção:* Implementação do motor de mutação AST integrado em `verificar_qualidade.py`, garantindo a execução automatizada e auditável de 30 mutantes reais no Windows.
+Foram gerados e instalados dois executáveis nativos independentes (`.exe`) via `PyInstaller`:
+1. **`Calculadora Python.exe`**: Aplicação gráfica da Calculadora Python.
+2. **`Sistema Educacao Calculadora.exe`**: Plataforma gráfica completa contendo os 6 módulos do curso Carrasco embutidos (`--add-data "docs;docs"`), Simulador Interativo de Proctoring, Exame Carrasco + Emissor/Verificador de Certificados SHA-256 e Laboratório Prático da Calculadora.
 
-### 7.2. Pendências e Testes Manuais Necessários (Validação Humana)
-Conforme o Princípio Fundamental do projeto, a aprovação final dos critérios de aceitação e da experiência visual cabe ao **responsável pelo projeto**:
-1. Executar `python main.py` e preencher o checklist `QM-01` a `QM-08` em [tests/qa/roteiro_manual.md](file:///c:/Users/HORUS/Documents/Calculadora%20Python/tests/qa/roteiro_manual.md) para validar subjetivamente:
-   - Harmonia visual da paleta roxa/lavanda no monitor utilizado;
-   - Legibilidade e alinhamento tipográfico (`Segoe UI`);
-   - Fluidez de redimensionamento da janela com o mouse;
-   - Sensação tátil de clique e resposta ao teclado físico.
-2. Revisar e aprovar formalmente os 11 cenários Gherkin em [tests/features/calculadora.feature](file:///c:/Users/HORUS/Documents/Calculadora%20Python/tests/features/calculadora.feature).
+Ambos encontram-se instalados em:
+- Diretório do Projeto: `c:\Users\HORUS\Documents\Calculadora Python\`
+- Diretório Oficial de Programas do Usuário: `C:\Users\HORUS\AppData\Local\Programs\CalculadoraPython\`
+- Atalhos no Menu Iniciar: `C:\Users\HORUS\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\`
+- Atalhos na Área de Trabalho: `C:\Users\HORUS\Desktop\`

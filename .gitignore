@@ -14,11 +14,10 @@ __pycache__/
 htmlcov/
 coverage.json
 
-# Artefatos de compilação do PyInstaller (os .exe devem ir em GitHub Releases)
+# Pastas temporárias de compilação do PyInstaller (mantendo os .exe finais na raiz do repositório)
 build/
 dist/
 *.spec
-*.exe
 
 # Arquivos temporários do Microsoft Word e do Sistema Operacional
 ~$*.docx
