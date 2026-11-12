@@ -1,0 +1,11 @@
+# ============================================================
+# DEPENDÊNCIAS DE TESTE E ENGENHARIA DE QUALIDADE
+# Instalação: pip install -r requirements.txt
+# (Nota: tkinter, unittest e decimal já são nativos do Python)
+# ============================================================
+
+pytest>=9.0.0
+pytest-bdd>=9.0.0
+coverage>=7.0.0
+radon>=6.0.0
+mutmut>=3.0.0

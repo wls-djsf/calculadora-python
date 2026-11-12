@@ -1,0 +1,612 @@
+{
+  "crap": [
+    {
+      "arquivo": "calculadora.py",
+      "funcao": "Calculadora.validar_numero",
+      "linhas": "40-52",
+      "complexidade": 4,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 4.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "calculadora.py",
+      "funcao": "Calculadora._formatar_resultado",
+      "linhas": "58-66",
+      "complexidade": 2,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 2.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "calculadora.py",
+      "funcao": "Calculadora.somar",
+      "linhas": "71-75",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "calculadora.py",
+      "funcao": "Calculadora.subtrair",
+      "linhas": "80-84",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "calculadora.py",
+      "funcao": "Calculadora.multiplicar",
+      "linhas": "89-93",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "calculadora.py",
+      "funcao": "Calculadora.dividir",
+      "linhas": "99-108",
+      "complexidade": 2,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 2.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "calculadora.py",
+      "funcao": "Calculadora.porcentagem",
+      "linhas": "113-127",
+      "complexidade": 4,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 4.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "calculadora.py",
+      "funcao": "Calculadora.inverter_sinal",
+      "linhas": "131-134",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "calculadora.py",
+      "funcao": "Calculadora.calcular",
+      "linhas": "140-150",
+      "complexidade": 2,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 2.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "calculadora.py",
+      "funcao": "Calculadora.calcular_encadeado",
+      "linhas": "152-157",
+      "complexidade": 2,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 2.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "iniciar_aplicacao",
+      "linhas": "510-515",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora.__init__",
+      "linhas": "70-103",
+      "complexidade": 3,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 3.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora._configurar_janela",
+      "linhas": "111-130",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora._construir_interface",
+      "linhas": "138-165",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora._construir_visor",
+      "linhas": "172-209",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora._construir_botoes",
+      "linhas": "225-248",
+      "complexidade": 3,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 3.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora._criar_botao",
+      "linhas": "250-275",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora._configurar_teclado",
+      "linhas": "283-285",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora.processar_tecla",
+      "linhas": "287-314",
+      "complexidade": 5,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 5.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora.pressionar_botao",
+      "linhas": "316-332",
+      "complexidade": 4,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 4.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora.inserir_digito",
+      "linhas": "334-345",
+      "complexidade": 4,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 4.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora.inserir_decimal",
+      "linhas": "347-356",
+      "complexidade": 4,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 4.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora.selecionar_operador",
+      "linhas": "358-373",
+      "complexidade": 5,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 5.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora.calcular_resultado",
+      "linhas": "375-392",
+      "complexidade": 4,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 4.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora.calcular_porcentagem",
+      "linhas": "394-404",
+      "complexidade": 2,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 2.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora.inverter_sinal",
+      "linhas": "406-413",
+      "complexidade": 2,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 2.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora.limpar_tudo",
+      "linhas": "415-423",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora.limpar_entrada",
+      "linhas": "425-432",
+      "complexidade": 2,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 2.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora.retroceder",
+      "linhas": "434-446",
+      "complexidade": 4,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 4.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora._executar_operacao_pendente",
+      "linhas": "452-467",
+      "complexidade": 3,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 3.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora._registrar_erro",
+      "linhas": "469-477",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora._converter_entrada",
+      "linhas": "479-482",
+      "complexidade": 2,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 2.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora._formatar_exibicao",
+      "linhas": "484-488",
+      "complexidade": 3,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 3.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora._atualizar_interface",
+      "linhas": "490-495",
+      "complexidade": 3,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 3.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora.obter_visor",
+      "linhas": "497-499",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "main.py",
+      "funcao": "InterfaceCalculadora.obter_historico",
+      "linhas": "501-503",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    }
+  ],
+  "mutacao": {
+    "total": 30,
+    "eliminados": 30,
+    "sobreviventes": 0,
+    "taxa_mutacao_pct": 100.0,
+    "mutantes": [
+      {
+        "id": 1,
+        "linha": 52,
+        "categoria": "Modificação de Retorno",
+        "descricao": "return expr -> return None",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 2,
+        "linha": 66,
+        "categoria": "Modificação de Retorno",
+        "descricao": "return expr -> return None",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 3,
+        "linha": 75,
+        "categoria": "Modificação de Retorno",
+        "descricao": "return expr -> return None",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 4,
+        "linha": 84,
+        "categoria": "Modificação de Retorno",
+        "descricao": "return expr -> return None",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 5,
+        "linha": 93,
+        "categoria": "Modificação de Retorno",
+        "descricao": "return expr -> return None",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 6,
+        "linha": 108,
+        "categoria": "Modificação de Retorno",
+        "descricao": "return expr -> return None",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 7,
+        "linha": 127,
+        "categoria": "Modificação de Retorno",
+        "descricao": "return expr -> return None",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 8,
+        "linha": 134,
+        "categoria": "Modificação de Retorno",
+        "descricao": "return expr -> return None",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 9,
+        "linha": 150,
+        "categoria": "Modificação de Retorno",
+        "descricao": "return expr -> return None",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 10,
+        "linha": 157,
+        "categoria": "Modificação de Retorno",
+        "descricao": "return expr -> return None",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 11,
+        "linha": 48,
+        "categoria": "Condição Booleana",
+        "descricao": "or -> and",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 12,
+        "linha": 50,
+        "categoria": "Condição Booleana",
+        "descricao": "not expr -> expr",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 13,
+        "linha": 64,
+        "categoria": "Operador Relacional",
+        "descricao": "== -> !=",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 14,
+        "linha": 65,
+        "categoria": "Modificação de Retorno",
+        "descricao": "return expr -> return None",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 15,
+        "linha": 106,
+        "categoria": "Operador Relacional",
+        "descricao": "== -> !=",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 16,
+        "linha": 121,
+        "categoria": "Operador Relacional",
+        "descricao": "not in -> in",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 17,
+        "linha": 123,
+        "categoria": "Operador Aritmético",
+        "descricao": "/ -> *",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 18,
+        "linha": 124,
+        "categoria": "Condição Booleana",
+        "descricao": "or -> and",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 19,
+        "linha": 125,
+        "categoria": "Modificação de Retorno",
+        "descricao": "return expr -> return None",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 20,
+        "linha": 148,
+        "categoria": "Operador Relacional",
+        "descricao": "not in -> in",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 21,
+        "linha": 75,
+        "categoria": "Operador Aritmético",
+        "descricao": "+ -> -",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 22,
+        "linha": 84,
+        "categoria": "Operador Aritmético",
+        "descricao": "- -> +",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 23,
+        "linha": 93,
+        "categoria": "Operador Aritmético",
+        "descricao": "* -> /",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 24,
+        "linha": 106,
+        "categoria": "Constante Numérica",
+        "descricao": "0 -> 1",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 25,
+        "linha": 108,
+        "categoria": "Operador Aritmético",
+        "descricao": "/ -> *",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 26,
+        "linha": 124,
+        "categoria": "Operador Relacional",
+        "descricao": "is -> is not",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 27,
+        "linha": 124,
+        "categoria": "Operador Relacional",
+        "descricao": "in -> not in",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 28,
+        "linha": 127,
+        "categoria": "Operador Aritmético",
+        "descricao": "* -> /",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 29,
+        "linha": 134,
+        "categoria": "Operador Unário",
+        "descricao": "-x -> +x",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      },
+      {
+        "id": 30,
+        "linha": 123,
+        "categoria": "Constante Numérica",
+        "descricao": "100 -> 101",
+        "status": "ELIMINADO (KILLED)",
+        "eliminado": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+# ============================================================
+# ARQUIVO .gitignore — PADRÃO PYTHON + PYINSTALLER + TESTES
+# ============================================================
+
+# Bytecode e caches do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches de testes e cobertura
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.json
+
+# Artefatos de compilação do PyInstaller (os .exe devem ir em GitHub Releases)
+build/
+dist/
+*.spec
+*.exe
+
+# Arquivos temporários do Microsoft Word e do Sistema Operacional
+~$*.docx
+Thumbs.db
+Desktop.ini
+
+# Ambientes virtuais (caso criados localmente)
+.venv/
+venv/
+env/
