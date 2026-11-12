@@ -359,6 +359,206 @@
       "cobertura_pct": 100.0,
       "crap": 1.0,
       "aprovado_crap": true
+    },
+    {
+      "arquivo": "src/proctoring.py",
+      "funcao": "SessaoProctoring.__init__",
+      "linhas": "53-62",
+      "complexidade": 6,
+      "rank_cc": "B",
+      "cobertura_pct": 100.0,
+      "crap": 6.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "src/proctoring.py",
+      "funcao": "SessaoProctoring.registrar_infracao",
+      "linhas": "64-77",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "src/proctoring.py",
+      "funcao": "SessaoProctoring._atualizar_status",
+      "linhas": "79-89",
+      "complexidade": 4,
+      "rank_cc": "A",
+      "cobertura_pct": 83.33,
+      "crap": 4.07,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "src/proctoring.py",
+      "funcao": "SessaoProctoring.inspecionar_ambiente",
+      "linhas": "91-157",
+      "complexidade": 4,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 4.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "src/proctoring.py",
+      "funcao": "SessaoProctoring.esta_elegivel_para_certificacao",
+      "linhas": "159-161",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "src/proctoring.py",
+      "funcao": "SessaoProctoring.gerar_relatorio_auditoria",
+      "linhas": "163-171",
+      "complexidade": 2,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 2.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "src/certificador_sha256.py",
+      "funcao": "CertificadorSHA256.__init__",
+      "linhas": "32-35",
+      "complexidade": 3,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 3.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "src/certificador_sha256.py",
+      "funcao": "CertificadorSHA256.gerar_hash_sha256",
+      "linhas": "38-40",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "src/certificador_sha256.py",
+      "funcao": "CertificadorSHA256.serializar_payload_canonico",
+      "linhas": "43-45",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "src/certificador_sha256.py",
+      "funcao": "CertificadorSHA256.calcular_assinatura",
+      "linhas": "47-50",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "src/certificador_sha256.py",
+      "funcao": "CertificadorSHA256._validar_requisitos_aprovacao",
+      "linhas": "52-80",
+      "complexidade": 6,
+      "rank_cc": "B",
+      "cobertura_pct": 100.0,
+      "crap": 6.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "src/certificador_sha256.py",
+      "funcao": "CertificadorSHA256.emitir_certificado",
+      "linhas": "83-130",
+      "complexidade": 4,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 4.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "src/certificador_sha256.py",
+      "funcao": "CertificadorSHA256.salvar_certificado",
+      "linhas": "133-140",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "src/certificador_sha256.py",
+      "funcao": "CertificadorSHA256.verificar_certificado",
+      "linhas": "142-182",
+      "complexidade": 10,
+      "rank_cc": "B",
+      "cobertura_pct": 100.0,
+      "crap": 10.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "src/avaliador_carrasco.py",
+      "funcao": "AvaliadorCarrasco.__init__",
+      "linhas": "17-18",
+      "complexidade": 2,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 2.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "src/avaliador_carrasco.py",
+      "funcao": "AvaliadorCarrasco.avaliar_implementacao_calculadora",
+      "linhas": "20-75",
+      "complexidade": 19,
+      "rank_cc": "C",
+      "cobertura_pct": 100.0,
+      "crap": 19.0,
+      "aprovado_crap": false
+    },
+    {
+      "arquivo": "src/avaliador_carrasco.py",
+      "funcao": "AvaliadorCarrasco.executar_exame_completo",
+      "linhas": "78-105",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "verify_certificate.py",
+      "funcao": "validar_arquivo_certificado",
+      "linhas": "14-27",
+      "complexidade": 3,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 3.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "verify_certificate.py",
+      "funcao": "gerar_e_verificar_demonstracao",
+      "linhas": "30-55",
+      "complexidade": 1,
+      "rank_cc": "A",
+      "cobertura_pct": 100.0,
+      "crap": 1.0,
+      "aprovado_crap": true
+    },
+    {
+      "arquivo": "verify_certificate.py",
+      "funcao": "main",
+      "linhas": "59-83",
+      "complexidade": 6,
+      "rank_cc": "B",
+      "cobertura_pct": 33.33,
+      "crap": 16.67,
+      "aprovado_crap": false
     }
   ],
   "mutacao": {

@@ -70,7 +70,12 @@ def calcular_metricas_crap(arquivos_alvo, caminho_coverage_json):
         codigo = caminho_arq.read_text(encoding="utf-8")
         blocos = cc_visit(codigo)
 
-        info_cov = arquivos_cobertos.get(arquivo) or arquivos_cobertos.get(str(caminho_arq)) or {}
+        info_cov = (
+            arquivos_cobertos.get(arquivo)
+            or arquivos_cobertos.get(arquivo.replace("/", "\\"))
+            or arquivos_cobertos.get(str(caminho_arq))
+            or {}
+        )
         linhas_executadas = set(info_cov.get("executed_lines", []))
         linhas_ausentes = set(info_cov.get("missing_lines", []))
 
@@ -289,6 +294,12 @@ def main():
         "3. Testes de Integração (main.py <-> calculadora.py)",
     )
 
+    # 3B. Testes do Sistema de Educação, Proctoring e Certificação SHA-256
+    cod_educacao, _, _ = executar_comando(
+        [sys.executable, "-m", "pytest", "tests/test_sistema_educacao.py", "-v"],
+        "3B. Testes do Sistema de Educação, Proctoring Simulado e SHA-256",
+    )
+
     # 4. Cobertura de Linhas e Ramificações (Coverage)
     executar_comando(
         [
@@ -297,7 +308,7 @@ def main():
             "coverage",
             "run",
             "--branch",
-            "--source=calculadora,main",
+            "--source=calculadora,main,src,verify_certificate",
             "-m",
             "pytest",
         ],
@@ -316,22 +327,30 @@ def main():
         "4D. Exportação JSON de Cobertura (coverage.json)",
     )
 
+    arquivos_analise = [
+        "calculadora.py",
+        "main.py",
+        "src/proctoring.py",
+        "src/certificador_sha256.py",
+        "src/avaliador_carrasco.py",
+        "verify_certificate.py",
+    ]
     # 5. Análise de Complexidade (Radon) e Métrica CRAP
     executar_comando(
-        [sys.executable, "-m", "radon", "cc", "calculadora.py", "main.py", "-s", "-a"],
+        [sys.executable, "-m", "radon", "cc", *arquivos_analise, "-s", "-a"],
         "5A. Complexidade Ciclomática (Radon CC)",
     )
     executar_comando(
-        [sys.executable, "-m", "radon", "mi", "calculadora.py", "main.py", "-s"],
+        [sys.executable, "-m", "radon", "mi", *arquivos_analise, "-s"],
         "5B. Índice de Manutenibilidade (Radon MI)",
     )
     executar_comando(
-        [sys.executable, "-m", "radon", "raw", "calculadora.py", "main.py", "-s"],
+        [sys.executable, "-m", "radon", "raw", *arquivos_analise, "-s"],
         "5C. Métricas Brutas de Tamanho de Código (Radon Raw)",
     )
 
     relatorio_crap = calcular_metricas_crap(
-        ["calculadora.py", "main.py"], RAIZ_PROJETO / "coverage.json"
+        arquivos_analise, RAIZ_PROJETO / "coverage.json"
     )
     print(f"\n{'=' * 70}")
     print("[MÉTRICA CRAP] Relatório por Função/Método (Referência: CRAP <= 12)")
@@ -358,7 +377,8 @@ def main():
     )
 
     falhas = any(
-        codigo != 0 for codigo in (cod_unitario_ut, cod_unitario_pt, cod_bdd, cod_integracao)
+        codigo != 0
+        for codigo in (cod_unitario_ut, cod_unitario_pt, cod_bdd, cod_integracao, cod_educacao)
     ) or (resumo_mutacao["sobreviventes"] > 0)
     return 1 if falhas else 0
 
